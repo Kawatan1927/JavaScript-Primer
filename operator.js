@@ -174,3 +174,39 @@ console.log(15     | 9);      // => 15
     //左辺がtrueの場合右辺は評価しない(短絡評価)
     //左辺を真偽値へと暗黙的な型変換
 //NOT演算子
+    //評価結果を反転した真偽値を返す
+    //falsyな値は'true'となる
+    console.log(!0); // => true
+    console.log(!""); // => true
+    console.log(!null); // => true
+    //falsyでない値は'false'となる
+    console.log(!42); // => false
+    console.log(!"文字列"); // => false
+/*Nullish coalescing演算子(??)
+左辺の値がnullishであるならば右辺の値を評価結果として返す
+nullish：nullまたはundefinedとなる値
+*/
+    // 左辺がnullishであるため、右辺の値の評価結果を返す
+    console.log(null ?? "右辺の値"); // => "右辺の値"
+    console.log(undefined ?? "右辺の値"); // => "右辺の値"
+    // 左辺がnullishではないため、左辺の値の評価結果を返す
+    console.log(true ?? "右辺の値"); // => true
+    console.log(false ?? "右辺の値"); // => false
+    console.log(0 ?? "右辺の値"); // => 0
+    console.log("文字列" ?? "右辺の値"); // => "文字列
+/*三項演算子
+条件式 ? trueのとき処理する式 : falseのときに処理する式;
+*/
+    const valueA = true ? "A" : "B";
+    console.log(valueA); // => "A"
+    const valueB = false ? "A" : "B";
+    console.log(valueB); // => "B"
+//グループ化演算子
+const aa = 1;
+const bb = 2;
+const cc = 3;
+console.log(aa + bb * cc); // => 7
+console.log((aa + bb) * cc); // => 9
+//カンマ演算子
+const aaa = 1, bbb = 2, ccc = aaa + bbb;
+console.log(ccc); // => 3
